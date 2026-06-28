@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 	metadataBase: new URL(siteUrl),
 	title: {
 		default: "Graid — Premium Digital Assets, Built for Builders",
-		template: "%s — Graid",
+		template: "%s | Graid",
 	},
 	description: "Graid is a marketplace for premium digital assets — web templates, UI kits, icon sets, Figma files, motion packs, and code snippets. Built for builders.",
 	keywords: ["digital marketplace", "web templates", "UI kits", "icon sets", "Figma files", "motion packs", "code snippets", "digital assets", "Graid"],
