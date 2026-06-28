@@ -3,28 +3,41 @@
   color: #f0f0ee;
   border-top: 1px solid var(--border-subtle);
   margin-top: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 10% 100%, rgba(107, 92, 255, 0.08), transparent 60%);
+  pointer-events: none;
 }
 
 [data-theme="dark"] .footer {
-  background: #080808;
+  background: #060606;
 }
 
 .inner {
   max-width: var(--max-width-wide);
   margin: 0 auto;
-  padding: 64px 24px 24px;
+  padding: var(--space-6) var(--space-3) var(--space-4);
+  position: relative;
+  z-index: 1;
 }
 
 .top {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 48px;
-  padding-bottom: 48px;
+  gap: var(--space-5);
+  padding-bottom: var(--space-5);
   border-bottom: 1px solid #2a2a2a;
 }
 
 .brandCol {
-  max-width: 340px;
+  max-width: 360px;
 }
 
 .brandCol :global(a) {
@@ -32,7 +45,7 @@
 }
 
 .tagline {
-  font-family: var(--font-syne), sans-serif;
+  font-family: var(--font-display);
   font-size: 1.125rem;
   font-weight: 400;
   margin-top: 12px;
@@ -43,7 +56,7 @@
 .description {
   font-size: 0.875rem;
   color: var(--color-mist);
-  line-height: 1.6;
+  line-height: 1.65;
   margin-bottom: 20px;
 }
 
@@ -56,8 +69,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border-radius: var(--radius-sm);
   border: 1px solid #2a2a2a;
   color: var(--color-mist);
@@ -68,6 +81,7 @@
   border-color: var(--color-electric);
   color: var(--color-electric);
   background: rgba(107, 92, 255, 0.1);
+  transform: translateY(-2px);
 }
 
 .linksCol h4 {
@@ -92,11 +106,13 @@
 .footerLink {
   font-size: 0.875rem;
   color: var(--color-mist);
-  transition: color var(--transition-fast);
+  transition: color var(--transition-fast), padding-left var(--transition-fast);
+  display: inline-block;
 }
 
 .footerLink:hover {
   color: var(--color-electric);
+  padding-left: 4px;
 }
 
 .bottom {
@@ -116,6 +132,7 @@
 .bottomLinks {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .bottomLink {
@@ -131,7 +148,7 @@
 @media (max-width: 768px) {
   .top {
     grid-template-columns: 1fr 1fr;
-    gap: 32px;
+    gap: var(--space-4);
   }
   .brandCol {
     grid-column: 1 / -1;
@@ -139,16 +156,26 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 480px) {
   .inner {
-    padding: 48px 16px 16px;
+    padding: var(--space-5) var(--space-2) var(--space-3);
   }
   .top {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: var(--space-4);
+    padding-bottom: var(--space-4);
   }
   .bottom {
     flex-direction: column;
     align-items: flex-start;
+  }
+  .bottomLinks {
+    gap: 14px;
+  }
+}
+
+@media (max-width: 375px) {
+  .inner {
+    padding: var(--space-4) var(--space-1) var(--space-2);
   }
 }

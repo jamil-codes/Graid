@@ -1,6 +1,6 @@
 .page {
-  padding-top: 120px;
-  padding-bottom: 96px;
+  padding-top: clamp(96px, 10vh, 128px);
+  padding-bottom: var(--space-7);
   min-height: 100vh;
 }
 

@@ -30,15 +30,25 @@
   border: 1px solid var(--border);
   background: var(--bg);
   color: var(--text);
-  font-size: 0.9375rem;
+  font-size: 1rem; /* Prevents iOS zoom on focus */
   outline: none;
   transition: border-color var(--transition-fast);
   font-family: inherit;
+  min-height: 48px;
+}
+
+.select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23888780' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
 }
 
 .textarea {
   resize: vertical;
-  min-height: 120px;
+  min-height: 132px;
   line-height: 1.6;
 }
 

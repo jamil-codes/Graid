@@ -1,5 +1,5 @@
 .page {
-  padding-bottom: 96px;
+  padding-bottom: var(--space-7);
 }
 
 .banner {

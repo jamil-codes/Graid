@@ -8,7 +8,7 @@
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  padding: 12px 14px;
+  padding: 14px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
   background: transparent;
@@ -16,6 +16,8 @@
   cursor: pointer;
   transition: all var(--transition-fast);
   width: 100%;
+  min-height: 56px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .license:hover {

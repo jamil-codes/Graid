@@ -1,38 +1,54 @@
 .page {
   padding-top: 0;
-  padding-bottom: 96px;
+  padding-bottom: var(--space-7);
 }
 
 /* Hero */
 .hero {
-  padding-top: 140px;
-  padding-bottom: 80px;
+  padding-top: clamp(120px, 14vh, 160px);
+  padding-bottom: var(--space-6);
   background: var(--color-void);
   color: #f0f0ee;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(107, 92, 255, 0.15), transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(167, 139, 250, 0.08), transparent 50%);
+  pointer-events: none;
 }
 
 [data-theme="dark"] .hero {
-  background: #080808;
+  background: #060606;
 }
 
 .eyebrow {
-  font-size: 0.8125rem;
+  font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--color-electric);
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 1;
 }
 
 .heroTitle {
-  font-family: var(--font-syne), sans-serif;
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 2rem + 2vw, 4rem);
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.05;
   color: #f0f0ee;
-  margin-bottom: 24px;
+  margin-bottom: var(--space-3);
   max-width: 800px;
+  position: relative;
+  z-index: 1;
 }
 
 .accent {
@@ -40,10 +56,12 @@
 }
 
 .heroText {
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
   color: var(--color-mist);
   line-height: 1.7;
   max-width: 640px;
+  position: relative;
+  z-index: 1;
 }
 
 /* Mission */
@@ -54,7 +72,7 @@
 }
 
 .missionLabel {
-  font-size: 0.8125rem;
+  font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -63,8 +81,8 @@
 }
 
 .missionText {
-  font-family: var(--font-syne), sans-serif;
-  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 1rem + 1vw, 1.75rem);
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: -0.02em;
@@ -73,22 +91,22 @@
 
 /* Section header */
 .sectionHeader {
-  margin-bottom: 48px;
+  margin-bottom: var(--space-5);
 }
 
 .sectionEyebrow {
   display: block;
-  font-size: 0.8125rem;
+  font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--color-electric);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .sectionTitle {
-  font-family: var(--font-syne), sans-serif;
-  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 2.5rem);
   font-weight: 700;
   letter-spacing: -0.03em;
   color: var(--text);
@@ -98,32 +116,33 @@
 .valuesGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  gap: var(--space-3);
 }
 
 .valueCard {
-  padding: 32px;
+  padding: var(--space-4);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-subtle);
   background: var(--card-bg);
-  transition: transform var(--transition), border-color var(--transition);
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
 
 .valueCard:hover {
   transform: translateY(-4px);
   border-color: var(--color-electric);
+  box-shadow: var(--shadow-md);
 }
 
 .valueIcon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   border-radius: var(--radius-md);
   background: var(--color-electric-light);
   color: var(--color-electric);
-  margin-bottom: 20px;
+  margin-bottom: var(--space-3);
 }
 
 [data-theme="dark"] .valueIcon {
@@ -131,22 +150,22 @@
 }
 
 .valueTitle {
-  font-size: 1.25rem;
+  font-size: clamp(1.125rem, 1rem + 0.5vw, 1.3125rem);
   font-weight: 600;
   color: var(--text);
   margin-bottom: 8px;
 }
 
 .valueDesc {
-  font-size: 0.9375rem;
+  font-size: clamp(0.875rem, 0.8rem + 0.3vw, 0.9375rem);
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 /* Timeline */
 .timeline {
   position: relative;
-  padding-left: 32px;
+  padding-left: 36px;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -154,16 +173,16 @@
 .timeline::before {
   content: "";
   position: absolute;
-  left: 7px;
+  left: 9px;
   top: 8px;
   bottom: 8px;
   width: 2px;
-  background: var(--border);
+  background: linear-gradient(to bottom, var(--color-electric), var(--border));
 }
 
 .timelineItem {
   position: relative;
-  padding-bottom: 40px;
+  padding-bottom: var(--space-5);
 }
 
 .timelineItem:last-child {
@@ -172,13 +191,13 @@
 
 .timelineDot {
   position: absolute;
-  left: -32px;
+  left: -36px;
   top: 4px;
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   border-radius: var(--radius-full);
   background: var(--color-electric);
-  border: 3px solid var(--bg);
+  border: 4px solid var(--bg);
   z-index: 1;
 }
 
@@ -190,24 +209,24 @@
 }
 
 .timelineTitle {
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.1875rem);
   font-weight: 600;
   color: var(--text);
   margin-top: 4px;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .timelineDesc {
-  font-size: 0.9375rem;
+  font-size: clamp(0.875rem, 0.8rem + 0.3vw, 0.9375rem);
   color: var(--text-secondary);
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 /* Team */
 .teamGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: var(--space-3);
 }
 
 .teamCard {
@@ -215,21 +234,22 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 32px;
+  padding: var(--space-4) var(--space-3);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-subtle);
   background: var(--card-bg);
-  transition: transform var(--transition), border-color var(--transition);
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
 
 .teamCard:hover {
   transform: translateY(-4px);
   border-color: var(--color-electric);
+  box-shadow: var(--shadow-md);
 }
 
 .teamAvatar {
-  width: 120px;
-  height: 120px;
+  width: 110px;
+  height: 110px;
   border-radius: var(--radius-full);
 }
 
@@ -237,10 +257,15 @@
   margin-bottom: 16px;
   border: 3px solid var(--border-subtle);
   border-radius: var(--radius-full);
+  transition: border-color var(--transition);
+}
+
+.teamCard:hover .wrapper {
+  border-color: var(--color-electric);
 }
 
 .teamName {
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
   font-weight: 600;
   color: var(--text);
   margin-bottom: 4px;
@@ -254,9 +279,19 @@
 /* CTA */
 .cta {
   text-align: center;
-  padding: 64px;
-  border-radius: var(--radius-lg);
+  padding: clamp(40px, 5vw, 72px);
+  border-radius: var(--radius-xl);
   background: var(--color-electric-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(107, 92, 255, 0.1), transparent 60%);
+  pointer-events: none;
 }
 
 [data-theme="dark"] .cta {
@@ -265,25 +300,31 @@
 }
 
 .ctaTitle {
-  font-family: var(--font-syne), sans-serif;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 1.5rem + 1.5vw, 3rem);
   font-weight: 700;
   letter-spacing: -0.03em;
   color: var(--text);
   margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
 }
 
 .ctaText {
-  font-size: 1.0625rem;
+  font-size: clamp(0.9375rem, 0.9rem + 0.2vw, 1.0625rem);
   color: var(--text-secondary);
-  margin-bottom: 32px;
+  margin-bottom: var(--space-4);
+  position: relative;
+  z-index: 1;
 }
 
 .ctaActions {
   display: flex;
-  gap: 16px;
+  gap: 14px;
   justify-content: center;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 768px) {
@@ -294,12 +335,20 @@
     grid-template-columns: repeat(2, 1fr);
   }
   .cta {
-    padding: 32px;
+    padding: var(--space-4);
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 480px) {
   .teamGrid {
     grid-template-columns: 1fr;
+  }
+  .ctaActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .ctaActions > * {
+    width: 100%;
+    justify-content: center;
   }
 }

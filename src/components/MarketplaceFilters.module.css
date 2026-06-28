@@ -1,7 +1,7 @@
 .layout {
   display: grid;
   grid-template-columns: 260px 1fr;
-  gap: 32px;
+  gap: var(--space-4);
   align-items: start;
 }
 
@@ -13,8 +13,8 @@
 .sidebarInner {
   display: flex;
   flex-direction: column;
-  gap: 28px;
-  padding: 24px;
+  gap: 24px;
+  padding: var(--space-3);
   border-radius: var(--radius-md);
   border: 1px solid var(--border-subtle);
   background: var(--card-bg);
@@ -37,6 +37,8 @@
   color: var(--color-electric);
   font-weight: 500;
   transition: opacity var(--transition-fast);
+  padding: 4px 8px;
+  min-height: 32px;
 }
 
 .clearBtn:hover {
@@ -60,7 +62,7 @@
 .checkboxes {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .checkboxLabel {
@@ -68,6 +70,8 @@
   align-items: center;
   gap: 10px;
   cursor: pointer;
+  padding: 4px 0;
+  min-height: 32px;
 }
 
 .checkbox {
@@ -75,6 +79,7 @@
   height: 18px;
   accent-color: var(--color-electric);
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .checkText {
@@ -108,21 +113,22 @@
 .rangeSlider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   border-radius: var(--radius-full);
   background: var(--color-electric);
   cursor: pointer;
-  border: 2px solid var(--card-bg);
+  border: 3px solid var(--card-bg);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
 .rangeSlider::-moz-range-thumb {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   border-radius: var(--radius-full);
   background: var(--color-electric);
   cursor: pointer;
-  border: 2px solid var(--card-bg);
+  border: 3px solid var(--card-bg);
 }
 
 .ratingButtons {
@@ -132,7 +138,7 @@
 }
 
 .ratingBtn {
-  padding: 6px 12px;
+  padding: 8px 14px;
   border-radius: var(--radius-full);
   border: 1px solid var(--border);
   font-size: 0.8125rem;
@@ -140,6 +146,7 @@
   color: var(--text-secondary);
   background: transparent;
   transition: all var(--transition-fast);
+  min-height: 36px;
 }
 
 .ratingBtn:hover {
@@ -161,9 +168,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 24px;
+  margin-bottom: var(--space-3);
   padding-bottom: 16px;
   border-bottom: 1px solid var(--border-subtle);
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .resultCount {
@@ -191,6 +200,7 @@
   color: var(--text);
   font-size: 0.875rem;
   cursor: pointer;
+  min-height: 40px;
 }
 
 .sortSelect:focus {
@@ -200,7 +210,7 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: var(--space-3);
 }
 
 .emptyState {
@@ -208,18 +218,18 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 80px 24px;
+  padding: var(--space-7) var(--space-3);
   text-align: center;
 }
 
 .emptyIcon {
   color: var(--text-secondary);
-  margin-bottom: 20px;
+  margin-bottom: var(--space-3);
   opacity: 0.5;
 }
 
 .emptyTitle {
-  font-size: 1.25rem;
+  font-size: clamp(1.125rem, 1rem + 0.5vw, 1.3125rem);
   font-weight: 600;
   color: var(--text);
   margin-bottom: 8px;
@@ -228,18 +238,19 @@
 .emptyText {
   font-size: 0.9375rem;
   color: var(--text-secondary);
-  margin-bottom: 24px;
+  margin-bottom: var(--space-3);
   max-width: 360px;
 }
 
 .clearBtnLarge {
-  padding: 10px 24px;
+  padding: 12px 28px;
   border-radius: var(--radius-sm);
   background: var(--color-electric);
   color: #ffffff;
   font-size: 0.875rem;
   font-weight: 500;
   transition: background var(--transition-fast);
+  min-height: 44px;
 }
 
 .clearBtnLarge:hover {
@@ -259,10 +270,17 @@
   .sidebar {
     position: static;
   }
+  .sidebarInner {
+    padding: var(--space-2);
+  }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 480px) {
   .grid {
     grid-template-columns: 1fr;
+  }
+  .toolbar {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

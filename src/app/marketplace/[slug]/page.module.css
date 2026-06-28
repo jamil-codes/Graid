@@ -1,6 +1,6 @@
 .page {
   padding-top: 0;
-  padding-bottom: 96px;
+  padding-bottom: var(--space-7);
 }
 
 /* Hero */
@@ -62,21 +62,21 @@
 /* Split layout */
 .split {
   display: grid;
-  grid-template-columns: 1fr 400px;
-  gap: 48px;
+  grid-template-columns: 1fr 380px;
+  gap: var(--space-5);
   align-items: start;
 }
 
 .leftCol {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: var(--space-5);
   min-width: 0;
 }
 
 /* Description */
 .descTitle {
-  font-family: var(--font-syne), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -186,7 +186,7 @@
 }
 
 .reviewBigRating {
-  font-family: var(--font-syne), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-size: 2rem;
   font-weight: 700;
   color: var(--text);
@@ -267,7 +267,7 @@
 }
 
 .productName {
-  font-family: var(--font-syne), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -399,11 +399,11 @@
 
 /* Related */
 .related {
-  margin-top: 96px;
+  margin-top: var(--space-7);
 }
 
 .relatedTitle {
-  font-family: var(--font-syne), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-size: 1.75rem;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -414,7 +414,7 @@
 .relatedGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: var(--space-3);
 }
 
 @media (max-width: 1024px) {

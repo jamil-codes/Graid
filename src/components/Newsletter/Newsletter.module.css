@@ -2,26 +2,40 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 48px;
-  padding: 56px;
-  border-radius: var(--radius-lg);
+  gap: var(--space-5);
+  padding: clamp(32px, 4vw, 56px);
+  border-radius: var(--radius-xl);
   background: var(--color-void);
   color: #f0f0ee;
   flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.newsletter::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 0% 100%, rgba(107, 92, 255, 0.18), transparent 55%),
+    radial-gradient(ellipse at 100% 0%, rgba(167, 139, 250, 0.1), transparent 55%);
+  pointer-events: none;
 }
 
 [data-theme="dark"] .newsletter {
-  background: #181818;
+  background: #111111;
   border: 1px solid var(--border);
 }
 
 .newsletterContent {
-  max-width: 440px;
+  max-width: 460px;
+  position: relative;
+  z-index: 1;
 }
 
 .newsletterTitle {
-  font-family: var(--font-syne), sans-serif;
-  font-size: 1.75rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
   font-weight: 700;
   letter-spacing: -0.03em;
   margin-bottom: 12px;
@@ -29,28 +43,31 @@
 }
 
 .newsletterText {
-  font-size: 0.9375rem;
+  font-size: clamp(0.875rem, 0.8rem + 0.3vw, 1rem);
   color: var(--color-mist);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .newsletterForm {
   display: flex;
   gap: 12px;
   flex: 1;
-  min-width: 320px;
+  min-width: 280px;
+  position: relative;
+  z-index: 1;
 }
 
 .newsletterInput {
   flex: 1;
-  padding: 12px 20px;
+  padding: 14px 20px;
   border-radius: var(--radius-sm);
   border: 1px solid #2a2a2a;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.04);
   color: #f0f0ee;
   font-size: 0.9375rem;
   outline: none;
-  transition: border-color var(--transition-fast);
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+  min-height: 52px;
 }
 
 .newsletterInput::placeholder {
@@ -59,15 +76,27 @@
 
 .newsletterInput:focus {
   border-color: var(--color-electric);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 @media (max-width: 768px) {
   .newsletter {
-    padding: 32px;
+    padding: var(--space-4);
     flex-direction: column;
     align-items: flex-start;
   }
   .newsletterForm {
     width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .newsletterForm {
+    flex-direction: column;
+  }
+  .newsletterForm > * {
+    width: 100%;
+    justify-content: center;
   }
 }

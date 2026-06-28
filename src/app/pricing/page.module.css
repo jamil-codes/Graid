@@ -1,27 +1,27 @@
 .page {
-  padding-top: 120px;
-  padding-bottom: 96px;
+  padding-top: clamp(96px, 10vh, 128px);
+  padding-bottom: var(--space-7);
   min-height: 100vh;
 }
 
 .header {
   text-align: center;
-  max-width: 640px;
-  margin: 0 auto 64px;
+  max-width: 680px;
+  margin: 0 auto var(--space-6);
 }
 
 .eyebrow {
-  font-size: 0.8125rem;
+  font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--color-electric);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .title {
-  font-family: var(--font-syne), sans-serif;
-  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 2rem + 1.5vw, 3.5rem);
   font-weight: 700;
   letter-spacing: -0.03em;
   color: var(--text);
@@ -30,17 +30,17 @@
 }
 
 .subtitle {
-  font-size: 1.0625rem;
+  font-size: clamp(0.9375rem, 0.9rem + 0.2vw, 1.125rem);
   color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 24px;
+  line-height: 1.65;
+  margin-bottom: var(--space-3);
 }
 
 .guarantee {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 20px;
+  padding: 10px 22px;
   border-radius: var(--radius-full);
   background: rgba(29, 158, 117, 0.1);
   color: var(--color-mint);
@@ -51,24 +51,30 @@
 .plans {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  max-width: 800px;
-  margin: 0 auto 96px;
+  gap: var(--space-3);
+  max-width: 880px;
+  margin: 0 auto var(--space-7);
 }
 
 .plan {
   position: relative;
-  padding: 36px;
+  padding: clamp(28px, 3vw, 40px);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-subtle);
   background: var(--card-bg);
   display: flex;
   flex-direction: column;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.plan:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
 }
 
 .planPopular {
   border-color: var(--color-electric);
-  box-shadow: 0 12px 40px rgba(107, 92, 255, 0.12);
+  box-shadow: 0 12px 48px rgba(107, 92, 255, 0.12);
   position: relative;
   overflow: hidden;
 }
@@ -80,7 +86,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: var(--color-electric);
+  background: linear-gradient(90deg, var(--color-electric), #a78bfa);
 }
 
 .popularBadge {
@@ -98,33 +104,33 @@
 }
 
 .planHeader {
-  margin-bottom: 24px;
+  margin-bottom: var(--space-3);
 }
 
 .planName {
-  font-family: var(--font-syne), sans-serif;
-  font-size: 1.5rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
   font-weight: 700;
   color: var(--text);
   margin-bottom: 8px;
 }
 
 .planDesc {
-  font-size: 0.9375rem;
+  font-size: clamp(0.875rem, 0.8rem + 0.3vw, 0.9375rem);
   color: var(--text-secondary);
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .priceRow {
   display: flex;
   align-items: baseline;
   gap: 8px;
-  margin-bottom: 24px;
+  margin-bottom: var(--space-3);
 }
 
 .planPrice {
-  font-family: var(--font-syne), sans-serif;
-  font-size: 3rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 2rem + 2vw, 3.25rem);
   font-weight: 700;
   color: var(--text);
   letter-spacing: -0.03em;
@@ -138,7 +144,7 @@
 
 .planCta {
   width: 100%;
-  margin-bottom: 28px;
+  margin-bottom: var(--space-4);
 }
 
 .featureList {
@@ -151,8 +157,9 @@
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  font-size: 0.9375rem;
+  font-size: clamp(0.875rem, 0.8rem + 0.3vw, 0.9375rem);
   color: var(--text);
+  line-height: 1.5;
 }
 
 .featureItem svg {
@@ -162,16 +169,16 @@
 
 /* Comparison */
 .comparisonSection {
-  margin-bottom: 96px;
+  margin-bottom: var(--space-7);
 }
 
 .comparisonTitle {
-  font-family: var(--font-syne), sans-serif;
-  font-size: 2rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
   font-weight: 700;
   letter-spacing: -0.03em;
   color: var(--text);
-  margin-bottom: 32px;
+  margin-bottom: var(--space-4);
   text-align: center;
 }
 
@@ -179,6 +186,7 @@
   overflow-x: auto;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-subtle);
+  -webkit-overflow-scrolling: touch;
 }
 
 .table {
@@ -245,8 +253,8 @@
 }
 
 .faqTitle {
-  font-family: var(--font-syne), sans-serif;
-  font-size: 2rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
   font-weight: 700;
   letter-spacing: -0.03em;
   color: var(--text);
@@ -255,14 +263,25 @@
 }
 
 .faqSubtitle {
-  font-size: 1rem;
+  font-size: clamp(0.9375rem, 0.9rem + 0.2vw, 1rem);
   color: var(--text-secondary);
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: var(--space-5);
 }
 
 @media (max-width: 768px) {
   .plans {
     grid-template-columns: 1fr;
+    max-width: 520px;
+  }
+}
+
+@media (max-width: 480px) {
+  .plan {
+    padding: var(--space-3);
+  }
+  .popularBadge {
+    top: 16px;
+    right: 16px;
   }
 }

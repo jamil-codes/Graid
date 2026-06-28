@@ -32,11 +32,11 @@ const categories = [
 ];
 
 const floatingCards = [
-  { src: "https://picsum.photos/seed/float1/400/225", alt: "SaaS template preview", top: "8%", left: "5%", delay: "0s", duration: "18s" },
-  { src: "https://picsum.photos/seed/float2/400/225", alt: "UI kit preview", top: "15%", left: "72%", delay: "2s", duration: "22s" },
-  { src: "https://picsum.photos/seed/float3/400/225", alt: "Icon set preview", top: "45%", left: "3%", delay: "1s", duration: "20s" },
-  { src: "https://picsum.photos/seed/float4/400/225", alt: "Figma file preview", top: "55%", left: "75%", delay: "3s", duration: "24s" },
-  { src: "https://picsum.photos/seed/float5/400/225", alt: "Motion pack preview", top: "78%", left: "40%", delay: "1.5s", duration: "19s" },
+  { src: "https://picsum.photos/seed/float1/400/225", alt: "SaaS template preview", top: "10%", left: "6%", delay: "0s", duration: "18s" },
+  { src: "https://picsum.photos/seed/float2/400/225", alt: "UI kit preview", top: "18%", left: "70%", delay: "2s", duration: "22s" },
+  { src: "https://picsum.photos/seed/float3/400/225", alt: "Icon set preview", top: "48%", left: "4%", delay: "1s", duration: "20s" },
+  { src: "https://picsum.photos/seed/float4/400/225", alt: "Figma file preview", top: "58%", left: "72%", delay: "3s", duration: "24s" },
+  { src: "https://picsum.photos/seed/float5/400/225", alt: "Motion pack preview", top: "80%", left: "38%", delay: "1.5s", duration: "19s" },
 ];
 
 export default function HomePage() {
@@ -46,8 +46,17 @@ export default function HomePage() {
 
   return (
     <div className={styles.page}>
-      {/* Hero */}
+      {/* Hero — clean, no bg, animated mesh */}
       <section className={styles.hero}>
+        {/* Animated gradient mesh background */}
+        <div className={styles.heroMesh} aria-hidden="true">
+          <div className={`${styles.meshOrb} ${styles.meshOrb1}`} />
+          <div className={`${styles.meshOrb} ${styles.meshOrb2}`} />
+          <div className={`${styles.meshOrb} ${styles.meshOrb3}`} />
+        </div>
+        <div className={styles.heroGrid} aria-hidden="true" />
+
+        {/* Floating preview cards */}
         <div className={styles.floatingCards} aria-hidden="true">
           {floatingCards.map((card, i) => (
             <div
@@ -69,29 +78,41 @@ export default function HomePage() {
             </div>
           ))}
         </div>
-        <div className={styles.heroOverlay} />
+
+        {/* Content */}
         <div className={styles.heroContent}>
-          <p className={styles.heroEyebrow}>Built for builders</p>
-          <h1 className={styles.heroTitle}>
-            Premium digital assets.
-            <br />
-            <span className={styles.heroAccent}>Built for builders.</span>
-          </h1>
-          <p className={styles.heroSubtitle}>
-            Web templates, UI kits, icons, Figma files, motion packs, and code
-            snippets — quality-graded by creators, ready to deploy. Ship less.
-            Ship better.
-          </p>
-          <div className={styles.heroCtas}>
-            <Button href="/marketplace" size="lg">
-              Browse the marketplace
-            </Button>
-            <Button href="/pricing" size="lg" variant="ghost">
-              Sell your work
-            </Button>
-          </div>
+          <RevealOnScroll>
+            <span className={styles.heroEyebrow}>
+              <span className={styles.heroEyebrowDot} />
+              Built for builders
+            </span>
+          </RevealOnScroll>
+          <RevealOnScroll delay={100}>
+            <h1 className={styles.heroTitle}>
+              Premium digital assets.
+              <br />
+              <span className={styles.heroAccent}>Built for builders.</span>
+            </h1>
+          </RevealOnScroll>
+          <RevealOnScroll delay={200}>
+            <p className={styles.heroSubtitle}>
+              Web templates, UI kits, icons, Figma files, motion packs, and code
+              snippets — quality-graded by creators, ready to deploy.
+            </p>
+          </RevealOnScroll>
+          <RevealOnScroll delay={300}>
+            <div className={styles.heroCtas}>
+              <Button href="/marketplace" size="lg">
+                Browse the marketplace
+              </Button>
+              <Button href="/pricing" size="lg" variant="ghost">
+                Sell your work
+              </Button>
+            </div>
+          </RevealOnScroll>
         </div>
-        <div className={styles.heroScroll}>
+
+        <div className={styles.heroScroll} aria-hidden="true">
           <span className={styles.scrollLine} />
         </div>
       </section>
@@ -103,8 +124,8 @@ export default function HomePage() {
             {categories.map((cat) => (
               <Link key={cat.name} href={cat.href} className={styles.categoryCard}>
                 <svg
-                  width="28"
-                  height="28"
+                  width="26"
+                  height="26"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -151,20 +172,26 @@ export default function HomePage() {
       <section className={styles.statsBand}>
         <div className="container">
           <div className={styles.statsGrid}>
-            <div className={styles.stat}>
-              <span className={styles.statNumber}>{stats.assets}</span>
-              <span className={styles.statLabel}>Digital assets</span>
-            </div>
-            <div className={styles.statDivider} />
-            <div className={styles.stat}>
-              <span className={styles.statNumber}>{stats.creators}</span>
-              <span className={styles.statLabel}>Creators</span>
-            </div>
-            <div className={styles.statDivider} />
-            <div className={styles.stat}>
-              <span className={styles.statNumber}>{stats.reviews}</span>
-              <span className={styles.statLabel}>5-star reviews</span>
-            </div>
+            <RevealOnScroll>
+              <div className={styles.stat}>
+                <span className={styles.statNumber}>{stats.assets}</span>
+                <span className={styles.statLabel}>Digital assets</span>
+              </div>
+            </RevealOnScroll>
+            <div className={styles.statDivider} aria-hidden="true" />
+            <RevealOnScroll delay={100}>
+              <div className={styles.stat}>
+                <span className={styles.statNumber}>{stats.creators}</span>
+                <span className={styles.statLabel}>Creators</span>
+              </div>
+            </RevealOnScroll>
+            <div className={styles.statDivider} aria-hidden="true" />
+            <RevealOnScroll delay={200}>
+              <div className={styles.stat}>
+                <span className={styles.statNumber}>{stats.reviews}</span>
+                <span className={styles.statLabel}>5-star reviews</span>
+              </div>
+            </RevealOnScroll>
           </div>
         </div>
       </section>
@@ -182,8 +209,6 @@ export default function HomePage() {
               </div>
             </div>
           </RevealOnScroll>
-        </div>
-        <div className="container">
           <div className={styles.trendingGrid}>
             {trending.map((product, i) => (
               <RevealOnScroll key={product.id} delay={i * 80}>
@@ -195,7 +220,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="section">
+      <section className="section section-alt">
         <div className="container">
           <RevealOnScroll>
             <div className={styles.sectionHeader}>
