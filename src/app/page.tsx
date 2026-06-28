@@ -10,7 +10,7 @@ import Newsletter from "@/components/Newsletter/Newsletter";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Graid — Premium Digital Assets, Built for Builders",
+  title: "Premium Digital Assets, Built for Builders",
   description:
     "Marketplace for premium digital assets. Web templates, UI kits, icons, Figma files, motion packs, and code snippets. Ship less. Ship better.",
   alternates: { canonical: siteUrl },

@@ -35,7 +35,7 @@ export async function generateMetadata({
   }
   const creator = getCreatorById(product.creatorId);
   return {
-    title: `${product.name} — ${creator?.name || "Graid"}`,
+    title: `${product.name} — ${creator?.name || "Marketplace"}`,
     description: product.tagline,
     alternates: { canonical: `${siteUrl}/marketplace/${product.slug}` },
     openGraph: {

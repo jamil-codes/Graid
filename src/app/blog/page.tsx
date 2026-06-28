@@ -10,7 +10,7 @@ import RevealOnScroll from "@/components/RevealOnScroll";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Blog — Graid",
+  title: "Blog",
   description:
     "Insights, guides, and stories from the Graid team and creator community. Learn about pricing, design systems, and building digital products.",
   alternates: { canonical: `${siteUrl}/blog` },
