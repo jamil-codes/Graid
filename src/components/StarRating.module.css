@@ -1,0 +1,33 @@
+.rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stars {
+  display: inline-flex;
+  gap: 1px;
+}
+
+.filled {
+  color: #f5a623;
+}
+
+.empty {
+  color: var(--border);
+}
+
+.text {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.count {
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.rating[data-size="md"] .text {
+  font-size: 0.9375rem;
+}

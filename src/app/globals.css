@@ -1,0 +1,221 @@
+/* ============================================
+   GRAID — Global Styles & Design Tokens
+   ============================================ */
+
+:root {
+  --color-void: #0f0f0f;
+  --color-electric: #6B5CFF;
+  --color-electric-light: #EEEDFE;
+  --color-mint: #1D9E75;
+  --color-paper: #F0F0EE;
+  --color-mist: #888780;
+  --color-ember: #D85A30;
+  --color-ink: #1a1a1a;
+
+  /* Derived tokens — light mode defaults */
+  --bg: var(--color-paper);
+  --bg-elevated: #ffffff;
+  --bg-subtle: #e8e8e6;
+  --text: var(--color-ink);
+  --text-secondary: var(--color-mist);
+  --border: #d9d9d6;
+  --border-subtle: #e5e5e3;
+  --nav-bg: rgba(255, 255, 255, 0.92);
+  --card-bg: #ffffff;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.12);
+  --overlay: rgba(15, 15, 15, 0.6);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  --max-width: 1280px;
+  --max-width-wide: 1600px;
+
+  --font-display: "Syne", sans-serif;
+  --font-ui: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --transition-fast: 0.15s ease;
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="dark"] {
+  --bg: var(--color-void);
+  --bg-elevated: #1a1a1a;
+  --bg-subtle: #222222;
+  --text: #f0f0ee;
+  --text-secondary: var(--color-mist);
+  --border: #2a2a2a;
+  --border-subtle: #1f1f1f;
+  --nav-bg: rgba(15, 15, 15, 0.92);
+  --card-bg: #181818;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.5);
+  --overlay: rgba(0, 0, 0, 0.7);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-ui), system-ui, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  transition: background var(--transition), color var(--transition);
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* Focus visible — electric violet ring */
+*:focus-visible {
+  outline: 2px solid var(--color-electric);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-subtle);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Selection */
+::selection {
+  background: var(--color-electric);
+  color: #ffffff;
+}
+
+/* Shared utility classes */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.container-wide {
+  max-width: var(--max-width-wide);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 96px 0;
+}
+
+.section-tight {
+  padding: 64px 0;
+}
+
+.display {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.mono {
+  font-family: var(--font-mono), monospace;
+}
+
+/* Scroll reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* No-scroll utility for body when drawer is open */
+body.no-scroll {
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 64px 0;
+  }
+  .section-tight {
+    padding: 48px 0;
+  }
+}
+
+@media (max-width: 375px) {
+  .container,
+  .container-wide {
+    padding: 0 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

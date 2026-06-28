@@ -1,0 +1,32 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-syne), sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  transition: opacity var(--transition-fast);
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+.mark {
+  flex-shrink: 0;
+  transition: transform var(--transition);
+}
+
+.logo:hover .mark {
+  transform: rotate(90deg);
+}
+
+.wordmark {
+  line-height: 1;
+}
+
+.violet {
+  color: var(--color-electric);
+}

@@ -1,0 +1,74 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid transparent;
+  line-height: 1;
+}
+
+/* Sizes */
+.sm {
+  padding: 8px 16px;
+  font-size: 0.875rem;
+}
+
+.md {
+  padding: 12px 24px;
+  font-size: 0.9375rem;
+}
+
+.lg {
+  padding: 16px 32px;
+  font-size: 1.0625rem;
+}
+
+/* Variants */
+.primary {
+  background: var(--color-electric);
+  color: #ffffff;
+}
+
+.primary:hover {
+  background: #5a4dff;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(107, 92, 255, 0.35);
+}
+
+.primary:active {
+  transform: translateY(0);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.ghost:hover {
+  border-color: var(--color-electric);
+  color: var(--color-electric);
+  background: var(--color-electric-light);
+}
+
+[data-theme="dark"] .ghost:hover {
+  background: rgba(107, 92, 255, 0.1);
+}
+
+.danger {
+  background: var(--color-ember);
+  color: #ffffff;
+}
+
+.danger:hover {
+  background: #c44d28;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(216, 90, 48, 0.35);
+}

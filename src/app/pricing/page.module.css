@@ -1,0 +1,268 @@
+.page {
+  padding-top: 120px;
+  padding-bottom: 96px;
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 64px;
+}
+
+.eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-electric);
+  margin-bottom: 8px;
+}
+
+.title {
+  font-family: var(--font-syne), sans-serif;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: 1.0625rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.guarantee {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  background: rgba(29, 158, 117, 0.1);
+  color: var(--color-mint);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.plans {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto 96px;
+}
+
+.plan {
+  position: relative;
+  padding: 36px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  background: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.planPopular {
+  border-color: var(--color-electric);
+  box-shadow: 0 12px 40px rgba(107, 92, 255, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.planPopular::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--color-electric);
+}
+
+.popularBadge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: var(--color-electric);
+  color: #ffffff;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.planHeader {
+  margin-bottom: 24px;
+}
+
+.planName {
+  font-family: var(--font-syne), sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.planDesc {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.planPrice {
+  font-family: var(--font-syne), sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.planPeriod {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+}
+
+.planCta {
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+.featureList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.9375rem;
+  color: var(--text);
+}
+
+.featureItem svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Comparison */
+.comparisonSection {
+  margin-bottom: 96px;
+}
+
+.comparisonTitle {
+  font-family: var(--font-syne), sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.tableWrap {
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card-bg);
+  min-width: 600px;
+}
+
+.tableHeaderFeature,
+.tableHeaderPlan {
+  padding: 20px 24px;
+  text-align: left;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+  border-bottom: 2px solid var(--border-subtle);
+  background: var(--bg-subtle);
+}
+
+.tableHeaderPro {
+  color: var(--color-electric);
+}
+
+.tableRow {
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background var(--transition-fast);
+}
+
+.tableRow:hover {
+  background: var(--bg-subtle);
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.tableCellFeature,
+.tableCell {
+  padding: 16px 24px;
+  font-size: 0.9375rem;
+  color: var(--text);
+}
+
+.tableCellFeature {
+  font-weight: 500;
+}
+
+.tableCell {
+  color: var(--text-secondary);
+}
+
+.tableCellPro {
+  font-weight: 600;
+  color: var(--color-electric);
+}
+
+/* FAQ */
+.faqSection {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.faqTitle {
+  font-family: var(--font-syne), sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.faqSubtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .plans {
+    grid-template-columns: 1fr;
+  }
+}

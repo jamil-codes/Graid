@@ -1,0 +1,154 @@
+.footer {
+  background: var(--color-void);
+  color: #f0f0ee;
+  border-top: 1px solid var(--border-subtle);
+  margin-top: auto;
+}
+
+[data-theme="dark"] .footer {
+  background: #080808;
+}
+
+.inner {
+  max-width: var(--max-width-wide);
+  margin: 0 auto;
+  padding: 64px 24px 24px;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.brandCol {
+  max-width: 340px;
+}
+
+.brandCol :global(a) {
+  color: #f0f0ee;
+}
+
+.tagline {
+  font-family: var(--font-syne), sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin-top: 12px;
+  margin-bottom: 16px;
+  color: var(--color-electric);
+}
+
+.description {
+  font-size: 0.875rem;
+  color: var(--color-mist);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.socials {
+  display: flex;
+  gap: 10px;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  border: 1px solid #2a2a2a;
+  color: var(--color-mist);
+  transition: all var(--transition-fast);
+}
+
+.socialLink:hover {
+  border-color: var(--color-electric);
+  color: var(--color-electric);
+  background: rgba(107, 92, 255, 0.1);
+}
+
+.linksCol h4 {
+  margin-bottom: 16px;
+}
+
+.colTitle {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #f0f0ee;
+  margin-bottom: 16px;
+}
+
+.linksCol ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footerLink {
+  font-size: 0.875rem;
+  color: var(--color-mist);
+  transition: color var(--transition-fast);
+}
+
+.footerLink:hover {
+  color: var(--color-electric);
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.copyright {
+  font-size: 0.8125rem;
+  color: var(--color-mist);
+}
+
+.bottomLinks {
+  display: flex;
+  gap: 20px;
+}
+
+.bottomLink {
+  font-size: 0.8125rem;
+  color: var(--color-mist);
+  transition: color var(--transition-fast);
+}
+
+.bottomLink:hover {
+  color: var(--color-electric);
+}
+
+@media (max-width: 768px) {
+  .top {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .brandCol {
+    grid-column: 1 / -1;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 375px) {
+  .inner {
+    padding: 48px 16px 16px;
+  }
+  .top {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,279 @@
+.page {
+  padding-bottom: 96px;
+}
+
+.cover {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  min-height: 320px;
+  overflow: hidden;
+  background: var(--bg-subtle);
+}
+
+.coverImg {
+  object-fit: cover;
+}
+
+.coverOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%);
+}
+
+.content {
+  max-width: 760px;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  margin-bottom: 32px;
+}
+
+.breadcrumb a {
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.breadcrumb a:hover {
+  color: var(--color-electric);
+}
+
+.crumbSep {
+  color: var(--text-secondary);
+}
+
+.crumbCurrent {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.header {
+  margin-bottom: 40px;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  flex-wrap: wrap;
+}
+
+.category {
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: var(--color-electric-light);
+  color: var(--color-electric);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+[data-theme="dark"] .category {
+  background: rgba(107, 92, 255, 0.12);
+}
+
+.dot {
+  color: var(--text-secondary);
+}
+
+.title {
+  font-family: var(--font-syne), sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.excerpt {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.authorCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 48px;
+}
+
+.authorAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+}
+
+.authorName {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.authorRole {
+  display: block;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.subheading {
+  font-family: var(--font-syne), sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-top: 16px;
+}
+
+.paragraph {
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-left: 4px;
+}
+
+.listItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.listItem svg {
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+/* CTA */
+.postCta {
+  margin-top: 64px;
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  background: var(--color-electric-light);
+  text-align: center;
+}
+
+[data-theme="dark"] .postCta {
+  background: rgba(107, 92, 255, 0.08);
+  border: 1px solid var(--border);
+}
+
+.ctaTitle {
+  font-family: var(--font-syne), sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.ctaText {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+/* Other posts */
+.otherPosts {
+  margin-top: 80px;
+}
+
+.otherTitle {
+  font-family: var(--font-syne), sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 32px;
+}
+
+.otherGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.otherCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  background: var(--card-bg);
+  transition: transform var(--transition), border-color var(--transition);
+}
+
+.otherCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-electric);
+}
+
+.otherImg {
+  object-fit: cover;
+}
+
+.otherContent {
+  padding: 20px;
+}
+
+.otherPostTitle {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 8px 0;
+  line-height: 1.3;
+  transition: color var(--transition-fast);
+}
+
+.otherCard:hover .otherPostTitle {
+  color: var(--color-electric);
+}
+
+.otherDate {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .cover {
+    height: 35vh;
+  }
+  .otherGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,87 @@
+.licenses {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.license {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  width: 100%;
+}
+
+.license:hover {
+  border-color: var(--color-electric);
+}
+
+.licenseActive {
+  border-color: var(--color-electric);
+  background: var(--color-electric-light);
+}
+
+[data-theme="dark"] .licenseActive {
+  background: rgba(107, 92, 255, 0.08);
+}
+
+.radioWrap {
+  padding-top: 3px;
+}
+
+.radio {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--border);
+  position: relative;
+  transition: border-color var(--transition-fast);
+}
+
+.radioChecked {
+  border-color: var(--color-electric);
+}
+
+.radioChecked::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--color-electric);
+}
+
+.licenseInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.licenseLabel {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.licenseDesc {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+.licensePrice {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+}
